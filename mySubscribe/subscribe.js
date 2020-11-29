@@ -60,6 +60,10 @@ var Event = function () {
 };
 
 Event.prototype.add = function (area, client) {
+  // 房屋面积加载到订阅列表
+  console.log(area);
+  console.log(client);
+
   if (!this.list[area]) this.list[area] = [];
   this.list[area].push(client);
   this.cache[area].forEach((price) => {
