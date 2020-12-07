@@ -20,16 +20,16 @@
 <script src="./throttle.js"></script>
 <script>
     // 然后是旧代码
-    function showTop() {
+    function getTop() {
         var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
         console.log("滚动条位置：" + scrollTop);
     }
 
-    window.onscroll = throttle(showTop, 1000); // 为了方便观察效果我们取个大点的间断值，实际使用根据需要来配置
-    window.onscroll = debounce(showTop, 1000); // 为了方便观察效果我们取个大点的间断值，实际使用根据需要来配置
+    window.onscroll = throttle(getTop, 2500); // 可以根据业务需求来修改间隔的时间
+    window.onscroll = debounce(getTop, 2500); 
     var TestBtn = document.getElementById("TestBtn");
     TestBtn.onclick = debounce(handleClick, 2000);
-    // TestBtn.onclick = throttle(showTop, 2000)
+    // TestBtn.onclick = throttle(getTop, 2000)
 
     function handleClick() {
         console.log("测试点击");
