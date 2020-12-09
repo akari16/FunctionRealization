@@ -17,22 +17,17 @@
     var client2 = new Client('client2')
 
 
-    var event = new Event()
-    // event.add('80平', client1)
-    // event.add('100平', client1)
-    // event.add('80平', client2)
-    // event.add('300平', client1)
-    // event.remove('300平', client1)
+    var messege = new Messege()
+    // messege.add('新消息01', client1)
+    // messege.remove('新消息01', client1)
 
-    event.triggle('80平', 200) // client1收到80平平的房源报价200 client2收到80平平的房源报价200
-    event.triggle('100平', 500) // client1收到100平平的房源报价500
-    event.triggle('200平', 1000) //
-    event.triggle('300平', 1000) //
+    messege.triggle('新消息02', "这是一段消息01");
+    messege.triggle('新消息02', "这是一段消息02"); 
 
-    var client3 = new Client('client3')
-    event.add('80平', client3)
-    event.add('100平', client3)
-    event.remove('100平', client3)
+    var client3 = new Client('client3');
+    messege.add('新消息03', client3);
+    messege.add('新消息03', client3);
+    messege.remove('新消息03', client3);
 
 
 </script>
